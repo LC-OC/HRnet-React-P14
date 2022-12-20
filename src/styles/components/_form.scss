@@ -8,7 +8,6 @@
   box-shadow: 0 0 30px rgba(#000000, .1);
   box-sizing: border-box;
   margin: 10px auto 100px;
-  overflow: hidden;
   form {
     display: flex;
     flex-direction: column;
@@ -104,4 +103,5 @@
     transform: translateY(2px);
   }
 }
+
 

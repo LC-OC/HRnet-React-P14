@@ -65,7 +65,7 @@ const Form = () => {
       city.length === 0 ||
       zipCode.length < 5
     ) {
-      setErrorForm("Form invalid.Try again !");
+      setErrorForm("Form invalid. Try again !");
     } else {
       console.log(employeeData);
       dispatch(addEmployee(employeeData));
@@ -107,6 +107,7 @@ const Form = () => {
           name="city"
           onChange={(e) => setCity(e.target.value)}
         />
+        <label>State</label>
         <DropdownStates getState={setState} statesName={statesName} />
         <label className="margin-input">Zip Code</label>
         <input

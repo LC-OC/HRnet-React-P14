@@ -7,7 +7,7 @@ const Header = () => {
     <div className="header">
       <img className="logo" src={logoRhnet} alt="logo RHnet" />
       <NavLink className="nav-link-list basic-1" to={"/employee-list"}>
-        View current employee
+        View current employees
       </NavLink>
     </div>
   );

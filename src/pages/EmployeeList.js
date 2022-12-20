@@ -3,8 +3,6 @@ import { useSelector } from "react-redux";
 import DataTable from "react-data-table-component";
 import FilterComponent from "../components/FilterComponent";
 import HeaderEmployeeList from "../components/HeaderEmployeeList";
-
-//import FilterComponent from "../components/FilterComponent";
 const EmployeeList = () => {
   const employee = useSelector((state) => state.employee);
 
@@ -70,10 +68,24 @@ const EmployeeList = () => {
     React.useState(false);
   const filteredEmployee = employee.filter(
     (item) =>
-      item.firstName &&
-      item.firstName.toLowerCase().includes(filterText.toLowerCase())
+      (item.firstName &&
+        item.firstName.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.lastName &&
+        item.lastName.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.dateOfBirth &&
+        item.dateOfBirth.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.startDate &&
+        item.startDate.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.street &&
+        item.street.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.city &&
+        item.city.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.state &&
+        item.state.toLowerCase().includes(filterText.toLowerCase())) ||
+      (item.zipCode && item.zipCode.includes(filterText)) ||
+      (item.department &&
+        item.department.toLowerCase().includes(filterText.toLowerCase()))
   );
-
   const subHeaderComponentMemo = React.useMemo(() => {
     const handleClear = () => {
       if (filterText) {
@@ -93,16 +105,18 @@ const EmployeeList = () => {
   return (
     <div className="main-employee-list">
       <HeaderEmployeeList />
-      <h1>Employee List</h1>
-      <DataTable
-        columns={columns}
-        subHeader
-        data={filteredEmployee}
-        pagination
-        subHeaderComponent={subHeaderComponentMemo}
-        paginationResetDefaultPage={resetPaginationToggle}
-        persistTableHead
-      />
+      <h1>Employees List</h1>
+      <div className="datatable-container">
+        <DataTable
+          columns={columns}
+          subHeader
+          data={filteredEmployee}
+          pagination
+          subHeaderComponent={subHeaderComponentMemo}
+          paginationResetDefaultPage={resetPaginationToggle}
+          persistTableHead
+        />
+      </div>
     </div>
   );
 };

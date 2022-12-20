@@ -1,17 +1,16 @@
 import React from "react";
 
-const FilterComponent = ({ filterText, onFilter, onClear }) => (
+const FilterComponent = ({ filterText, onFilter }) => (
   <>
+    <p className="search">Search: </p>
     <input
       id="search"
       type="text"
       aria-label="Search Input"
+      className="search-employee"
       value={filterText}
       onChange={onFilter}
     />
-    <button type="button" onClick={onClear}>
-      X
-    </button>
   </>
 );
 

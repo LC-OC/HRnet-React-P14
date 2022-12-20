@@ -14,9 +14,8 @@ const DatePickerFormStartDate = ({ getStartDate }) => {
       <DatePicker
         selected={startDate}
         onChange={handleOnChange}
-        dayPlaceholder="dd"
-        monthPlaceholder="mm"
-        yearPlaceholder="yyyy"
+        dateFormat="MM/dd/yyyy"
+        closeOnScroll={true}
       />
     </div>
   );
