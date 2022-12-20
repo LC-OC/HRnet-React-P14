@@ -22,15 +22,6 @@ const Form = () => {
   const [zipCode, setZipcode] = useState("");
   const [errorForm, setErrorForm] = useState(null);
 
-  // Modal
-  const [openModal, setOpenModal] = useState();
-  const title = "Employee Created !";
-  const textButton = "Close Modal";
-  const closeModalOnClick = () => {
-    setOpenModal(false);
-    navigate("/employee-list");
-  };
-
   // get States
   const statesName = [];
   states.forEach((state) => {
@@ -43,6 +34,16 @@ const Form = () => {
   const valueDepartment = { value: departments[0], label: departments[0] };
   const [department, setDepartment] = useState(valueDepartment);
   //
+
+  // Modal
+  const [openModal, setOpenModal] = useState();
+  const title = "Employee Created !";
+  const textButton = "Close Modal";
+  const closeModalOnClick = () => {
+    setOpenModal(false);
+    navigate("/employee-list");
+  };
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
     const employeeData = {
@@ -77,40 +78,43 @@ const Form = () => {
     <div className="form-container">
       <form onSubmit={handleOnSubmit}>
         <label>First Name</label>
-        <input id="first-name" onChange={(e) => setFirstName(e.target.value)} />
+        <input
+          id="first-name"
+          name="first name"
+          onChange={(e) => setFirstName(e.target.value)}
+        />
         <label>Last Name</label>
         <input
+          name="last name"
           type="text"
           id="last-name"
           onChange={(e) => setLastName(e.target.value)}
         />
         <DatePickerFormBirthDate getDateOfBirth={setDateOfBirth} />{" "}
         <DatePickerFormStartDate getStartDate={setStartDate} />
-        <fieldset className="address">
-          <legend>Address</legend>
-
-          <label>Street</label>
-          <input
-            id="street"
-            type="text"
-            onChange={(e) => setStreet(e.target.value)}
-          />
-
-          <label>City</label>
-          <input
-            id="city"
-            type="text"
-            onChange={(e) => setCity(e.target.value)}
-          />
-          <DropdownStates getState={setState} statesName={statesName} />
-
-          <label>Zip Code</label>
-          <input
-            id="zip-code"
-            type="text"
-            onChange={(e) => setZipcode(e.target.value)}
-          />
-        </fieldset>
+        <legend>Address</legend>
+        <label>Street</label>
+        <input
+          id="street"
+          type="text"
+          name="street"
+          onChange={(e) => setStreet(e.target.value)}
+        />
+        <label>City</label>
+        <input
+          id="city"
+          type="text"
+          name="city"
+          onChange={(e) => setCity(e.target.value)}
+        />
+        <DropdownStates getState={setState} statesName={statesName} />
+        <label className="margin-input">Zip Code</label>
+        <input
+          id="zip-code"
+          type="text"
+          name="zip code"
+          onChange={(e) => setZipcode(e.target.value)}
+        />
         <label>Department</label>
         <DropdownDepartment
           getDepartment={setDepartment}

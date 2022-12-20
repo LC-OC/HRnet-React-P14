@@ -91,7 +91,7 @@ const EmployeeList = () => {
     );
   }, [filterText, resetPaginationToggle]);
   return (
-    <div>
+    <div className="main-employee-list">
       <HeaderEmployeeList />
       <h1>Employee List</h1>
       <DataTable
