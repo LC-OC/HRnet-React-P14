@@ -1,0 +1,26 @@
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 6rem;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    .logo {
+        height: 6rem;
+    }
+    .nav-link-list {
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: black;
+        text-transform: uppercase;
+    }
+    .basic-1 {
+        background: 
+            linear-gradient(red 0 0) 
+            0 100% /var(--d, 0) 2px 
+          no-repeat;
+        transition:0.5s;
+      }
+      .basic-1:hover {
+        --d: 100%;
+      }
+}
