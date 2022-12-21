@@ -4,14 +4,24 @@
     justify-content: space-between;
     padding: 1rem 6rem;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
+    @media #{$mobile} {
+        padding: 1rem 3rem
+    }
     .logo {
         height: 6rem;
+        @media #{$mobile} {
+        height: 4rem;
+        
+        }
     }
     .nav-link-list {
         font-size: 1.2rem;
         text-decoration: none;
         color: black;
         text-transform: uppercase;
+        @media #{$mobile} {
+        font-size: 1rem;
+        }
     }
     .basic-1 {
         background: 
