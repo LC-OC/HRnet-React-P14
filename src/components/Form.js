@@ -16,7 +16,7 @@ const Form = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [dateOfBirth, setDateOfBirth] = useState(new Date());
-  const [startDate, setStartDate] = useState("");
+  const [startDate, setStartDate] = useState(new Date());
   const [street, setStreet] = useState("");
   const [city, setCity] = useState("");
   const [zipCode, setZipcode] = useState("");
@@ -112,7 +112,7 @@ const Form = () => {
         <label className="margin-input">Zip Code</label>
         <input
           id="zip-code"
-          type="text"
+          type="number"
           name="zip code"
           onChange={(e) => setZipcode(e.target.value)}
         />

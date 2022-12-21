@@ -15,7 +15,6 @@ const DatePickerFormBirthDate = ({ getDateOfBirth }) => {
       <DatePicker
         selected={birthDate}
         onChange={handleOnChange}
-        dateFormat="MM/dd/yyyy"
         closeOnScroll={true}
       />
     </div>
